@@ -26,6 +26,4 @@ public interface DataDao {
      *
      */
     List<String> getTableName();
-
-
 }

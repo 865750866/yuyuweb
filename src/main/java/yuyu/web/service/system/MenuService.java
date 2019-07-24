@@ -23,4 +23,6 @@ public interface MenuService {
      　　* @date 2019/7/9 17:03
      　　*/
     List<MenuEntity> getAllMenu();
+
+
 }
