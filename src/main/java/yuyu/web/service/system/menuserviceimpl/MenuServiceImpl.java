@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import yuyu.web.dao.system.MenuDao;
 import yuyu.web.entity.system.MenuEntity;
 import yuyu.web.service.system.MenuService;
+import yuyu.web.util.TreeUtils;
 
 import java.util.List;
 
@@ -29,6 +30,12 @@ public class MenuServiceImpl implements MenuService {
      　　* @date 2019/7/9 17:03
      　　*/
     public List<MenuEntity> getAllMenu(){
-        return menuDao.getAllMenu();
+
+        return TreeUtils.getChildPerms(menuDao.getAllMenu(),0);
+
     }
+
+
+
+
 }

@@ -3,10 +3,8 @@ package yuyu.web.controller.system;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import yuyu.web.entity.system.MenuEntity;
+import yuyu.web.entity.system.AjaxResult;
 import yuyu.web.service.system.MenuService;
-
-import java.util.List;
 
 /**
  　　* @description: 菜单相关控制器
@@ -32,7 +30,10 @@ public class MenuController {
      *
      */
     @RequestMapping("getAllMenu")
-    public List<MenuEntity> getTableName(){
-        return menuService.getAllMenu();
+    public AjaxResult getTableName(){
+
+        return new AjaxResult(AjaxResult.Type.SUCCESS,"Menus",menuService.getAllMenu());
+
     }
+
 }

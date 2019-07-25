@@ -1,11 +1,25 @@
 package yuyu.web.entity.system;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MenuEntity {
 
     Long id;
     String name;
     String url;
     Long parentId;
+
+    //菜单孩子
+    List<MenuEntity> children=new ArrayList<MenuEntity>();
+
+    public List<MenuEntity> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<MenuEntity> children) {
+        this.children = children;
+    }
 
     public Long getId() {
         return id;
